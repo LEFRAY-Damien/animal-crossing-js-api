@@ -65,19 +65,13 @@ function showVillagers(jsonObj) {
 
         yourimg.src = listeVillageois[i].image_uri;
         // insert l'image 'image_uri du json
-
         yourimg.className = 'taille'
-
         name.textContent = listeVillageois[i].name.name_EUfr;
         // insert le nom du villageoi
-
         genre.textContent = 'Sex:' + ' ' + listeVillageois[i].gender;
         // insert le genre
-
         espece.textContent = 'Espece:' + ' ' + listeVillageois[i].species;
-
         hobbies.textContent = 'Hobbies:' + ' ' + listeVillageois[i].hobby;
-
         anniversaire.textContent = 'Anniverssaire:' + ' ' + listeVillageois[i].birthday_string;
 
         //...............................................................
@@ -86,15 +80,10 @@ function showVillagers(jsonObj) {
 
         myArticle.appendChild(yourimg);
         // on ajoute l'image a article
-
         myArticle.appendChild(name);
-
         myArticle.appendChild(espece);
-
         myArticle.appendChild(anniversaire);
-
         myArticle.appendChild(hobbies);
-
         myArticle.appendChild(genre);
 
         // .............................................................
@@ -106,9 +95,7 @@ function showVillagers(jsonObj) {
     }
 
 }
-
 // ........................FILTRE...........................................................
-
 function myFunction() {
 
     // Déclaration de nos variables
@@ -146,5 +133,4 @@ function myFunction() {
         }
     }
 }
-
 // ........................FILTRE...........................................................
