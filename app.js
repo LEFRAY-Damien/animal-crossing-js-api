@@ -19,10 +19,9 @@ request.onload = // La fonction laod est declenché quand une reponce du serveur
 
         var tableauVillageois = request.response;
         // reponse requete stocker dans la variable tableauVillageois
-console.log(tableauVillageois);
         showVillagers(tableauVillageois);
         // cree l'obj showVillagers qui est = a la variable tableauVillageois
-        
+
     }
 
 
@@ -43,19 +42,14 @@ function showVillagers(jsonObj) {
 
         var yourimg = document.createElement('img');
         // cree un url pour une image
-
         var name = document.createElement('h2');
         // cree un h2 pour metre le nom du villageois
-
         var espece = document.createElement('p');
         // Cree un paragraphe pour l'espece
-
         var anniversaire = document.createElement('p');
         // Cree un paragraphe pour l'anniversaire
-
         var hobbies = document.createElement('p');
         // Cree un paragraphe pour le hobies
-
         var genre = document.createElement('p');
         // Cree un paragraphe pour le genre M ou F
 
@@ -63,9 +57,9 @@ function showVillagers(jsonObj) {
 
         // Attribuer une cle api a chaque element
 
-           /*
-         * Class Div parent myArticle
-         */
+        /*
+      * Class Div parent myArticle
+      */
         myArticle.className = 'bdr m-2 p-1 text-center'
 
 
@@ -77,14 +71,14 @@ function showVillagers(jsonObj) {
         name.textContent = listeVillageois[i].name.name_EUfr;
         // insert le nom du villageoi
 
-        genre.textContent = 'Sex:'+' ' + listeVillageois[i].gender;
+        genre.textContent = 'Sex:' + ' ' + listeVillageois[i].gender;
         // insert le genre
 
-        espece.textContent = 'Espece:'+' ' + listeVillageois[i].species;
+        espece.textContent = 'Espece:' + ' ' + listeVillageois[i].species;
 
-        hobbies.textContent = 'Hobbies:'+' ' + listeVillageois[i].hobby;
+        hobbies.textContent = 'Hobbies:' + ' ' + listeVillageois[i].hobby;
 
-        anniversaire.textContent = 'Anniverssaire:' +' ' + listeVillageois[i].birthday_string;
+        anniversaire.textContent = 'Anniverssaire:' + ' ' + listeVillageois[i].birthday_string;
 
         //...............................................................
 
@@ -113,3 +107,44 @@ function showVillagers(jsonObj) {
 
 }
 
+// ........................FILTRE...........................................................
+
+function myFunction() {
+
+    // Déclaration de nos variables
+    var input, filter, ul, li, a, j, txtValue;
+
+    // Récupération du input
+    input = document.getElementById("myInput");
+
+    // atribuons la variable filter a la récupération de notre valeur de notre input
+    filter = input.value.toUpperCase();
+
+    // On récupère la liste complète grace à ul
+    ul = document.getElementById("myUL");
+
+    //  On définit que li est un enfant de ul
+    li = ul.getElementsByTagName("li");
+
+    // Ici nous avons la boucle qui permet de trier nos résultat
+    for (j = 0; j < li.length; j++) {
+
+        // Ici on définit a comme étant l'enfant de li[i] Ici ils recherche des "h2"
+        a = li[j].getElementsByTagName("h2")[0];
+
+        // txtValue est egale au contenu de a
+        txtValue = a.textContent || a.innerText;
+
+        // Ici on check si notre txtValue est bien égale à filter
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+
+            // On laisse notre class vide si ça match
+            li[j].style.display = "";
+        } else {
+            // Sinon on les fait disparaitre
+            li[j].style.display = "none";
+        }
+    }
+}
+
+// ........................FILTRE...........................................................
