@@ -72,6 +72,8 @@ function showVillagers(jsonObj) {
         yourimg.src = listeVillageois[i].image_uri;
         // insert l'image 'image_uri du json
 
+        yourimg.className = 'taille'
+
         name.textContent = listeVillageois[i].name.name_EUfr;
         // insert le nom du villageoi
 
@@ -111,35 +113,3 @@ function showVillagers(jsonObj) {
 
 }
 
-
-// // morgan....................
-
-// // L'url ou nous allons chercher le json
-// const requestURL = 'villagers.json'
-// // Pour créé une requete nous avons besoin d'instancier notre objet 'XMLHttpRequest'
-// const request = new XMLHttpRequest();
-// // On ouvre la requete
-// request.open('GET', requestURL);
-// // On donne le type ou format de la requete
-// request.responseType = 'json';
-// // On demande à request de ce lancer au chargement de la page et de faire ça ...
-// request.onload = () => {
-//   // On défini notre variable qui va acceuillir nos nouvelle data
-//   var currency = request.response;
-//   getList(currency.hits[0])
-//   console.log('Get load');
-//   console.log(currency)
-// }
-// // On lance notre requete
-// request.send();
-// const section = document.querySelector('section')
-// function getList(jsonObj) {
-//   console.log('Get List');
-//   console.log(jsonObj)
-//   for (var prop in jsonObj) {
-//     const myH2 = document.createElement('h2')
-//     myH2.textContent = prop + ': ' + jsonObj[prop]
-//     section.appendChild(myH2)
-//     console.log(`obj.${prop}: ${jsonObj[prop]}`);
-//   }
-// }

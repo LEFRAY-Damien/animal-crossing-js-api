@@ -19,6 +19,12 @@ body {
 .blanc_transparent {
     background-color: rgba(225, 225, 225, 0.7); }
 
+/*  Bordure */
 .bdr {
     border: 2px solid black;
+}
+
+/* Taille des images */
+.taille {
+    width: 250px;
 }
