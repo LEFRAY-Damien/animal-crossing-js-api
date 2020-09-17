@@ -18,3 +18,7 @@ body {
 /* Blanc transparent */
 .blanc_transparent {
     background-color: rgba(225, 225, 225, 0.7); }
+
+.bdr {
+    border: 2px solid black;
+}
